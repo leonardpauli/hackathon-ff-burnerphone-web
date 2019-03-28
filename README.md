@@ -32,3 +32,9 @@ npm run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+# Contributing
+
+Created by Leonard Pauli, Kristian Skog at a hackathon, 28 mar 2019
+

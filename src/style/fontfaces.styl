@@ -1,0 +1,20 @@
+
+// util
+font-face-create(name, variant, weight=400, style=normal)
+	@font-face
+		font-family name
+		font-weight weight
+		font-style style
+		$filename = name+"/"+name+"-"+variant
+		src unquote("url(/font/"+$filename+".woff)") format('woff'),
+				unquote("url(/font/"+$filename+".ttf)") format('truetype')
+
+
+// Inter UI
+// @import url('https://rsms.me/inter/inter.css')
+
+
+// FiraGO
+// font-face-create('firago', 'regular', 	400, normal)
+// font-face-create('firago', 'medium', 		600, normal)
+// font-face-create('firago', 'semibold', 	700, normal)

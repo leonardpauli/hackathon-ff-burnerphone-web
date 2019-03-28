@@ -1,0 +1,46 @@
+// style lib file
+// created by Leonard Pauli, 11 mar 2019
+
+noop()
+	// do nothing, used as placeholder
+
+bg-image($url)
+	background-image url($url)
+	background-size contain
+	background-repeat no-repeat
+	background-position center center
+
+noselect()
+	-webkit-touch-callout none /* iOS Safari */
+	-webkit-user-select none /* Safari */
+	-khtml-user-select none /* Konqueror HTML */
+	-moz-user-select none /* Firefox */
+	-ms-user-select none /* Internet Explorer/Edge */
+	user-select none /* Non-prefixed version, currently supported by Chrome and Opera */
+
+
+// "browser hacks"
+
+/* usage:
+.foo
+	+safari-6_1-10_0-only()
+		color black
+*/
+// original source: https://browserstrangeness.github.io/css_hacks.html
+// additional hack to work with stylus...
+safari-6_1-10_0-only()
+	// the 'and(' has to be without space
+	_r = "min-color-index:0) and(-webkit-min-device-pixel-ratio:0){@media (min-width: 0px"
+	@media screen and ({_r})
+		{block}
+		_ s('_;}')
+
+
+// other
+
+// eg. svg-clip-path url(#myShape)
+svg-clip-path(path)
+	-webkit-clip-path path
+	clip-path path
+	+safari-6_1-10_0-only()
+		-webkit-clip-path none
